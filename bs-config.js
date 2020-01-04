@@ -26,7 +26,7 @@ module.exports = {
     "watchOptions": {
         "ignoreInitial": true
     },
-    "server": true,
+    "server": "public",
     "proxy": false,
     "port": 3000,
     "middleware": false,
