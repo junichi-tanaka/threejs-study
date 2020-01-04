@@ -13,6 +13,8 @@
     "three": "^0.112.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7"
+    "browser-sync": "^2.26.7",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }
