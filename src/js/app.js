@@ -1,4 +1,5 @@
-var THREE = require('three');
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -12,12 +13,16 @@ var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 var cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
+var controls = new OrbitControls(camera, renderer.domElement)
+
 camera.position.z = 5;
+controls.update();
 
 function animate() {
 	requestAnimationFrame( animate );
 	cube.rotation.x += 0.01;
 	cube.rotation.y += 0.01;
 	renderer.render( scene, camera );
+	controls.update();
 }
 animate();
