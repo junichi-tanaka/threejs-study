@@ -9,9 +9,13 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
 var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+var material = new THREE.MeshStandardMaterial( { color: 0x00ff00 } );
 var cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
+
+var directionalLight = new THREE.DirectionalLight(0xFFFFFF);
+directionalLight.position.set(1, 1, 1);
+scene.add(directionalLight);
 
 var controls = new OrbitControls(camera, renderer.domElement)
 
